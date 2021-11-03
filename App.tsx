@@ -1,4 +1,4 @@
-// In App.js in a new project   
+// In App.js in a new project  ddddd dddddgitdaaa
 import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';

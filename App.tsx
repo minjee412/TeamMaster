@@ -27,6 +27,7 @@ function DetailsScreen() {
 const Stack = createNativeStackNavigator();
 
 function App() {
+  fetch("https://koreanjson.com/posts/1").then(res => {console.log(res.json())})
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">

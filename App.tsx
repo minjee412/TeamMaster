@@ -1,4 +1,4 @@
-// In App.js in a new project
+// In App.js in a new project 
 import * as React from 'react';
 import { Button, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -18,6 +18,7 @@ function SettingsScreen({navigation}) {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Settings! 입니다.</Text>
       <Button title="home으로 이동" onPress={()=> navigation.navigate("Home홈")}/>
+
     </View>
   );
 }

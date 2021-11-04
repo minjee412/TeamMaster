@@ -1,26 +1,23 @@
 // In App.js in a new project 
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-function HomeScreen() {
+function HomeScreen({navigation}) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
+      <Text>Home! 입니다.</Text>
+      <Button title="setting으로 이동" onPress={()=> navigation.navigate('Settings셋팅')}/>
     </View>
   );
 }
 
-
-function DetailsScreen({ navigation }) {
+function SettingsScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-      <Button
-        title="Go to Details... again"
-        onPress={() => navigation.navigate('Details')}
-      />
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings! 입니다.</Text>
+      <Button title="home으로 이동" onPress={()=> navigation.navigate("Home홈")}/>
 
     </View>
   );
@@ -32,8 +29,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Home홈" component={HomeScreen} />
+        <Tab.Screen name="Settings셋팅" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

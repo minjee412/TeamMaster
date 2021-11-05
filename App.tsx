@@ -1,6 +1,6 @@
 // In App.js in a new project 
 import * as React from 'react'; //필수로 넣어야 하는 import
-import { Button, Text, View } from 'react-native';
+import { Button, Image, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // import Splash from './pages/screens/Splash/SplashContainer'
@@ -29,15 +29,13 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="test" component={TestMain}/>
+        <Tab.Screen name="test" component={TestMain} />
         <Tab.Screen name="Home홈" component={HomeScreen} />
         <Tab.Screen name="Settings셋팅" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
-
   );
 }
 

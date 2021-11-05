@@ -28,6 +28,11 @@ function SettingsScreen({navigation}) {
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+
+  React.useEffect(() => {
+
+  }, [])
+
   return (
     <NavigationContainer>
       <Tab.Navigator>

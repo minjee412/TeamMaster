@@ -5,11 +5,29 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // import Splash from './pages/screens/Splash/SplashContainer'
 import TestMain from './pages/screens/TestMain/index';
+import firestore from '@react-native-firebase/firestore'
+
+
 
 function HomeScreen({navigation}) {
+  function writeData() {
+    firestore()
+      .collection('Users')
+      .add({
+        name: '철수',
+        age: 8,
+        scholl: '다람쥐 초등학교',
+      })
+      .then((res) => {
+        console.log(res)
+        console.log('User added!');
+      }).catch(error=>console.log(error))
+  }
+  
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Home! 입니다.</Text>
+      <Button onPress={writeData} title="데이터보내기!" />
       <Button title="setting으로 이동" onPress={()=> navigation.navigate('Settings셋팅')}/>
     </View>
   );
@@ -28,6 +46,8 @@ function SettingsScreen({navigation}) {
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+
+ 
   return (
 
     <NavigationContainer>

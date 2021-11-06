@@ -1,44 +1,42 @@
-// In App.js in a new project (test 문구!!!) <테스트 입니다.>
+// In App.js in a new project 
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-function HomeScreen({ navigation }) {
+function HomeScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home! 입니다.</Text>
+      <Button title="setting으로 이동" onPress={()=> navigation.navigate('Settings셋팅')}/>
     </View>
   );
 }
 
-function DetailsScreen() {
+function SettingsScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings! 입니다.</Text>
+      <Button title="home으로 이동" onPress={()=> navigation.navigate("Home홈")}/>
+
     </View>
   );
 }
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
-function App() {
-  fetch("https://koreanjson.com/posts/1").then(res => {console.log(res.json())})
+export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Home홈" component={HomeScreen} />
+        <Tab.Screen name="Settings셋팅" component={SettingsScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
 
-export default App;
+
 
 
 // /**

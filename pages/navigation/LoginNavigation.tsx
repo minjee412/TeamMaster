@@ -8,7 +8,7 @@ export default function Login({ navigation }){
       <Text>Home Screen</Text>
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('MainList')}
       />
     </View>
     )

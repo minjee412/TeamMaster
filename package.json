@@ -12,7 +12,9 @@
   "dependencies": {
     "@emotion/native": "^11.0.0",
     "@emotion/react": "^11.5.0",
+    "@react-native-community/google-signin": "^5.0.0",
     "@react-native-firebase/app": "^13.0.1",
+    "@react-native-firebase/auth": "^13.0.1",
     "@react-native-firebase/firestore": "^13.0.1",
     "@react-navigation/bottom-tabs": "^6.0.9",
     "@react-navigation/drawer": "^6.1.8",

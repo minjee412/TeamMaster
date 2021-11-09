@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Landing from './pages/screens';
-import MainList from './pages/navigation/MainListNavigation';
+import MainListNavigation from './pages/navigation/MainListNavigation';
 import MyPage from './pages/navigation/MypageNavigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -23,7 +23,7 @@ export default function App() {
           }}
         />
         <Tab.Screen name="MainList" 
-          component={MainList} 
+          component={MainListNavigation} 
           options={{headerShown:false, tabBarIcon:()=>(<Ionicons 
                     name="list-outline"
                     size={20}/>

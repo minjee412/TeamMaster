@@ -1,21 +1,43 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Landing from './pages/screens';
 import MainList from './pages/navigation/MainListNavigation';
+import MyPage from './pages/navigation/MypageNavigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
-
-
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator()
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={Landing} />
-        <Stack.Screen name="MainList" component={MainList} />
-      </Stack.Navigator>
+      <Tab.Navigator initialRouteName="MainList" screenOptions={{tabBarActiveTintColor:'red', tabBarActiveBackgroundColor:'beige'}} >
+        <Tab.Screen name="Login" 
+          component={Landing} 
+          options={{tabBarIcon:() => (<Ionicons
+                    name="log-in-outline"
+                    size={20}
+          />
+          ),
+          }}
+        />
+        <Tab.Screen name="MainList" 
+          component={MainList} 
+          options={{headerShown:false, tabBarIcon:()=>(<Ionicons 
+                    name="list-outline"
+                    size={20}/>
+          )}} 
+        />
+        <Tab.Screen name="MyPage" 
+          component={MyPage} 
+          options={{tabBarIcon:()=>(<Ionicons
+            name="apps-outline"
+            size={20}/>
+
+          )}}
+        />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }

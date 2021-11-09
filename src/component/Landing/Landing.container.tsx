@@ -4,10 +4,9 @@ import { Button } from 'react-native';
 import auth from "@react-native-firebase/auth"
 import {useNavigation} from "@react-navigation/native"
 import React from "react";
+import LoginScreen from '../../../pages/screens/LoginScreen';
 
-GoogleSignin.configure ({
-  webClientId: "1046299788032-fbp1imn01jtdm3f5jf5v3be9heil59i2.apps.googleusercontent.com",
-});
+
 
 function Landing () {
   const navigation = useNavigation ()
@@ -17,7 +16,7 @@ function Landing () {
         const googleCredential = auth.GoogleAuthProvider.credential(idToken);
         return auth().signInWithCredential(googleCredential);
   }
-  return <Button title = "구글로그인" onPress = {onGoogleButtonPress}/>
+  return <LoginScreen onGoogleButtonPress={onGoogleButtonPress}/>
 }
 
 export default Landing;

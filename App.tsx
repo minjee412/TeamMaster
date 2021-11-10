@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Landing" screenOptions={{tabBarActiveTintColor:'red', tabBarActiveBackgroundColor:'beige'}} >
+      <Tab.Navigator initialRouteName="MainList" screenOptions={{tabBarActiveTintColor:'red', tabBarActiveBackgroundColor:'beige'}} >
         <Tab.Screen name="Landing" 
           component={Landing} 
           options={{tabBarIcon:() => (<Ionicons

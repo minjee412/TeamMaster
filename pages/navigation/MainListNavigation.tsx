@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 
 export default function MainListNavigation() {
   return (
-      <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown:false}}>
+      <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="MainList" component={MainList} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Calendar" component={Calendar} />

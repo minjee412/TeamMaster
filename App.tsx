@@ -65,6 +65,13 @@ export default function App() {
 
           )}}
         />
+        <Tab.Screen name="Detail" 
+          component={MainListNavigation} 
+          options={{headerShown:false, tabBarIcon:()=>(<Ionicons 
+                    name="list-outline"
+                    size={20}/>
+          )}} 
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
